@@ -133,6 +133,7 @@
     var height = file.height;
     var width = file.width;
     var image = deCompress(compressedValue, height, width);
+    console.log('hello');
     $(image).css({
       'height': '400px',
       'width': '300px'
@@ -248,7 +249,8 @@
     $(canvas).css('width', '500px');
 
     var image = new Image();
-    image.src = canvas.toDataURL();
+    image.src = canvas.toDataURL('image/jpeg', 1.0);
+    console.log(image.src);
 
     return image;
   }
